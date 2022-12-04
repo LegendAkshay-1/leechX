@@ -58,12 +58,12 @@ def start(update, context):
     reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-This bot can mirror all your links to Google Drive or to telegram!
-Type /{BotCommands.HelpCommand} to get a list of available commands
+Hello User , This bot can help you to leech files from Remote url and Torrent and Upload in Telegram.
+Use Command /leech by replying to link or torrent.
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('Not an Authorized user, deploy your own helios-mirror-leech bot', context.bot, update.message, reply_markup)
+        sendMarkup('Not an Authorized user, Contact @LegendAkshay For Access.', context.bot, update.message, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...", context.bot, update.message)
@@ -146,7 +146,7 @@ NOTE: Try each command without any perfix to see more detalis.<br><br>
 '''
 
 help_string = f'''
-Hei, Need Help!!
+Need Help ? Click Below Button To Contact Admin
 '''
 try:
     help = telegraph.create_page(
@@ -158,7 +158,7 @@ except Exception as err:
     pass
 def bot_help(update, context):
     button = ButtonMaker()
-    button.buildbutton("Click Here", f"https://graph.org/{help}")
+    button.buildbutton("Contact Us", f"https://t.me/LegendAkshay")
     reply_markup = button.build_menu(1)
     sendMarkup(help_string, context.bot, update.message, reply_markup)
 
