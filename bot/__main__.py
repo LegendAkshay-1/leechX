@@ -55,13 +55,12 @@ def start(update, context):
     buttons = ButtonMaker()
     buttons.buildbutton(f"{START_BTN1_NAME}", f"{START_BTN1_URL}")
     buttons.buildbutton(f"{START_BTN2_NAME}", f"{START_BTN2_URL}")
-    reply_markup = buttons.build_menu(2)
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
 Hello User , This bot can help you to leech files from Remote url and Torrent and Upload in Telegram.
 Use Command /leech by replying to link or torrent.
 '''
-        sendMarkup(start_string, context.bot, update.message, reply_markup)
+        sendMarkup(start_string, context.bot, update.message)
     else:
         sendMarkup('Not an Authorized user, Contact @LegendAkshay For Access.', context.bot, update.message, reply_markup)
 
