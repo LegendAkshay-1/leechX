@@ -60,9 +60,9 @@ def start(update, context):
 Hello User , This bot can help you to leech files from Remote url and Torrent and Upload in Telegram.
 Use Command /leech by replying to link or torrent.
 '''
-        sendMarkup(start_string, context.bot, update.message)
+        sendMessage(start_string, context.bot, update.message)
     else:
-        sendMarkup('Not an Authorized user, Contact @LegendAkshay For Access.', context.bot, update.message, reply_markup)
+        sendMessage('Not an Authorized user, Contact @LegendAkshay For Access.', context.bot, update.message)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...", context.bot, update.message)
